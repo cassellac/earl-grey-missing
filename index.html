@@ -413,12 +413,58 @@
     width:100%;
     height:280px;
     object-fit:cover;
+    object-position:center;
   }
+  .gallery img.obj-top{ object-position:center top; }
   .gallery figcaption{
     padding:0.7rem 0.9rem 0.9rem;
     font-size:0.85rem;
     color:var(--ink-soft);
   }
+  .gallery-trigger{
+    all:unset;
+    display:block;
+    width:100%;
+    cursor:zoom-in;
+  }
+  .gallery-trigger img{ pointer-events:none; }
+
+  /* ---------- Lightbox ---------- */
+  .lightbox{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:clamp(1rem, 5vw, 3rem);
+    background:rgba(10,11,12,0.86);
+  }
+  .lightbox[hidden]{ display:none; }
+  .lightbox img{
+    max-width:100%;
+    max-height:100%;
+    border-radius:12px;
+    box-shadow:0 30px 70px -20px rgba(0,0,0,0.6);
+  }
+  .lightbox-close{
+    position:absolute;
+    top:clamp(0.75rem, 3vw, 1.5rem);
+    right:clamp(0.75rem, 3vw, 1.5rem);
+    width:2.5rem;
+    height:2.5rem;
+    border-radius:50%;
+    border:0;
+    background:rgba(255,255,255,0.14);
+    color:#fff;
+    font-size:1.4rem;
+    line-height:1;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .lightbox-close:hover{ background:rgba(255,255,255,0.28); }
 
   /* ---------- Search party ---------- */
   .party{
@@ -643,27 +689,42 @@
       </div>
       <div class="gallery">
         <figure>
-          <img src="assets/img/earl-01.jpg" alt="Earl Grey, a grey long-haired Maine Coon, looking up with green-gold eyes">
+          <button class="gallery-trigger" type="button" aria-label="View larger: Earl's signature look">
+            <img src="assets/img/earl-01.jpg" alt="Earl Grey, a grey long-haired Maine Coon, looking up with green-gold eyes">
+          </button>
           <figcaption>Earl's signature look &mdash; ears up, watching everything.</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/earl-02.jpg" alt="Close-up of Earl Grey's face, whiskers and long grey fur">
+          <button class="gallery-trigger" type="button" aria-label="View larger: his fur in bright light">
+            <img class="obj-top" src="assets/img/earl-02.jpg" alt="Close-up of Earl Grey's face, whiskers and long grey fur">
+          </button>
           <figcaption>His fur reads more silver-grey in bright light.</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/earl-03.jpg" alt="Earl Grey peeking out from under a white blanket">
+          <button class="gallery-trigger" type="button" aria-label="View larger: blanket burrower">
+            <img src="assets/img/earl-03.jpg" alt="Earl Grey peeking out from under a white blanket">
+          </button>
           <figcaption>A blanket burrower at heart.</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/earl-04.jpg" alt="Earl Grey resting his chin on a green fabric toy">
+          <button class="gallery-trigger" type="button" aria-label="View larger: favorite green toy">
+            <img src="assets/img/earl-04.jpg" alt="Earl Grey resting his chin on a green fabric toy">
+          </button>
           <figcaption>Never far from his favorite green toy.</figcaption>
         </figure>
         <figure>
-          <img src="assets/img/earl-05-with-anthony.jpg" alt="Earl Grey in the car with his owner Anthony, wearing a red harness">
+          <button class="gallery-trigger" type="button" aria-label="View larger: Earl and Anthony">
+            <img src="assets/img/earl-05-with-anthony.jpg" alt="Earl Grey in the car with his owner Anthony, wearing a red harness">
+          </button>
           <figcaption>Earl and Anthony, on one of their car rides.</figcaption>
         </figure>
       </div>
     </section>
+
+    <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <button class="lightbox-close" type="button" aria-label="Close photo">&times;</button>
+      <img id="lightbox-img" src="" alt="">
+    </div>
 
     <section id="search-party">
       <div class="party">
@@ -702,6 +763,39 @@
     if (el && days > 0) {
       el.textContent = days + (days === 1 ? ' day' : ' days');
     }
+  })();
+
+  (function(){
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImg = document.getElementById('lightbox-img');
+    var closeBtn = lightbox.querySelector('.lightbox-close');
+    var lastFocused = null;
+
+    function open(img){
+      lastFocused = document.activeElement;
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.hidden = false;
+      closeBtn.focus();
+    }
+    function close(){
+      lightbox.hidden = true;
+      lightboxImg.src = '';
+      if (lastFocused) { lastFocused.focus(); }
+    }
+
+    document.querySelectorAll('.gallery-trigger').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        open(btn.querySelector('img'));
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    lightbox.addEventListener('click', function(e){
+      if (e.target === lightbox) { close(); }
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && !lightbox.hidden) { close(); }
+    });
   })();
 </script>
 
