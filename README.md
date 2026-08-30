@@ -6,4 +6,3 @@ near Cheyenne Ave & Maya Dr in Kingman, Arizona, on August 8, 2026.
 Static site, no build step — just `index.html` and `assets/`. Deployed via
 GitHub Pages (Settings → Pages → Deploy from branch → `main` / root).
 
-If you see him or have taken him in: **510.216.2233**
