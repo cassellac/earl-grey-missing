@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Earl Grey Is Missing — Kingman, AZ</title>
+<meta name="description" content="Earl Grey, a grey long-haired Maine Coon mix, has been missing from Kingman, Arizona since August 8, 2026. See how to help, view the search map, and contact Anthony with sightings.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23e8622c'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#22262a;
+    --ink-soft:#4a5057;
+    --paper:#eef1ef;
+    --paper-raised:#ffffff;
+    --line:#d6dbd6;
+    --slate:#5b6672;
+    --accent:#d95a25;
+    --accent-deep:#b3461a;
+    --accent-ink:#fff7f2;
+    --moon:#dde2df;
+    --focus:#2f6fed;
+    /* "Band" tokens: the dark charcoal bars (alert bar, facts, search-party,
+       footer) are a deliberate fixed motif echoing the poster's grey bands —
+       they stay dark charcoal with light text in BOTH page themes, so they
+       never flip with --paper/--ink. */
+    --band-bg:#262b30;
+    --band-ink:#f2f4f2;
+    --band-ink-soft:#c7cdc8;
+    --band-line:rgba(255,255,255,0.14);
+    --band-accent:#ffb488;
+    --band-accent-strong:#ff9a63;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ink:#eef1ef;
+      --ink-soft:#c3c9c6;
+      --paper:#191b1d;
+      --paper-raised:#232629;
+      --line:#363b3e;
+      --slate:#aab2ac;
+      --accent:#ee7b47;
+      --accent-deep:#f4966b;
+      --accent-ink:#2a1204;
+      --moon:#2b2f31;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#eef1ef;
+    --ink-soft:#c3c9c6;
+    --paper:#191b1d;
+    --paper-raised:#232629;
+    --line:#363b3e;
+    --slate:#aab2ac;
+    --accent:#ee7b47;
+    --accent-deep:#f4966b;
+    --accent-ink:#2a1204;
+    --moon:#2b2f31;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Libre Franklin", ui-sans-serif, system-ui, sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+  h1,h2,h3{
+    font-family:"Helvetica Neue", Helvetica, Arial, "Libre Franklin", sans-serif;
+    text-wrap:balance;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:"IBM Plex Mono", ui-monospace, monospace;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:0.72rem;
+    font-weight:500;
+    color:var(--accent-deep);
+  }
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 clamp(1.25rem, 4vw, 2.5rem);
+  }
+  :focus-visible{
+    outline:3px solid var(--focus);
+    outline-offset:2px;
+  }
+
+  /* ---------- Alert bar ---------- */
+  .alertbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--band-bg);
+    color:var(--band-ink);
+    border-bottom:3px solid var(--accent);
+  }
+  .alertbar-inner{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0.55rem clamp(1.25rem, 4vw, 2.5rem);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  .alertbar-msg{
+    font-size:0.85rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:0.55rem;
+  }
+  .pulse-dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--accent);
+    flex:none;
+    animation:pulse 2.2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 0 rgba(217,90,37,0.55); }
+    50%{ box-shadow:0 0 0 6px rgba(217,90,37,0); }
+  }
+  .alertbar a.callnow{
+    font-family:"IBM Plex Mono", monospace;
+    font-weight:600;
+    font-size:0.85rem;
+    color:var(--accent-ink);
+    background:var(--accent);
+    padding:0.4rem 0.85rem;
+    border-radius:999px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .alertbar a.callnow:hover{ background:var(--accent-deep); }
+
+  /* ---------- Header / hero ---------- */
+  header.hero{
+    padding:clamp(2.5rem, 6vw, 4.5rem) 0 clamp(2rem, 5vw, 3rem);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:clamp(2rem, 5vw, 3.5rem);
+    align-items:center;
+  }
+  @media (max-width:900px){
+    .hero-grid{ grid-template-columns:1fr; }
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.4rem);
+    font-weight:600;
+    line-height:0.98;
+    margin:0.5rem 0 1.1rem;
+  }
+  .hero h1 em{
+    font-style:normal;
+    color:var(--accent-deep);
+  }
+  .hero p.lede{
+    font-size:1.1rem;
+    color:var(--ink-soft);
+    max-width:52ch;
+    margin:0 0 1.75rem;
+  }
+  .cta-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.75rem;
+  }
+  .btn{
+    font-family:"Libre Franklin", sans-serif;
+    font-weight:700;
+    font-size:0.95rem;
+    padding:0.85rem 1.4rem;
+    border-radius:10px;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .btn-primary{ background:var(--accent); color:var(--accent-ink); }
+  .btn-primary:hover{ background:var(--accent-deep); }
+  .btn-outline{ background:transparent; color:var(--ink); border-color:var(--line); }
+  .btn-outline:hover{ border-color:var(--accent); color:var(--accent-deep); }
+
+  .hero-photo{
+    position:relative;
+    border-radius:22px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--paper-raised);
+    box-shadow:0 30px 60px -30px rgba(0,0,0,0.35);
+  }
+  .hero-photo img{
+    width:100%;
+    height:clamp(320px, 42vw, 480px);
+    object-fit:cover;
+  }
+  .hero-tag{
+    position:absolute;
+    left:1rem; bottom:1rem;
+    background:rgba(25,27,29,0.82);
+    color:#f4f2ee;
+    padding:0.7rem 1rem;
+    border-radius:12px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.78rem;
+    line-height:1.4;
+  }
+  .hero-tag strong{
+    display:block;
+    font-size:1.05rem;
+    color:#ffd9c2;
+  }
+
+  /* ---------- Facts band ---------- */
+  .facts{
+    background:var(--band-bg);
+    color:var(--band-ink);
+    border-radius:16px;
+    margin:0 0 clamp(2.5rem, 6vw, 4rem);
+  }
+  .facts-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:0;
+  }
+  @media (max-width:820px){
+    .facts-grid{ grid-template-columns:repeat(2, 1fr); }
+    .facts-grid > div:nth-child(5){ grid-column:1 / -1; }
+  }
+  .facts-grid > div{
+    padding:1.3rem 1.4rem;
+    border-right:1px solid var(--band-line);
+  }
+  .facts-grid > div:last-child{ border-right:none; }
+  @media (max-width:820px){
+    .facts-grid > div{ border-right:none; border-bottom:1px solid var(--band-line); }
+  }
+  .fact-label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--band-ink-soft);
+    margin-bottom:0.35rem;
+  }
+  .fact-value{
+    font-weight:700;
+    font-size:1.05rem;
+  }
+  .fact-value.accent{ color:var(--band-accent); }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:clamp(2rem, 5vw, 3rem) 0; }
+  .section-head{
+    max-width:62ch;
+    margin-bottom:1.75rem;
+  }
+  .section-head h2{
+    font-size:clamp(1.6rem, 3.2vw, 2.1rem);
+    font-weight:600;
+    margin-top:0.35rem;
+  }
+  .section-head p{ color:var(--ink-soft); margin:0.6rem 0 0; }
+
+  /* ---------- ID + medical ---------- */
+  .id-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:1.5rem;
+  }
+  @media (max-width:820px){ .id-grid{ grid-template-columns:1fr; } }
+  .card{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:1.6rem 1.7rem;
+  }
+  .id-list{
+    list-style:none;
+    margin:0.9rem 0 0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:0.75rem;
+  }
+  .id-list li{
+    display:flex;
+    gap:0.7rem;
+    align-items:flex-start;
+    font-size:0.98rem;
+  }
+  .id-list li::before{
+    content:"";
+    width:7px; height:7px;
+    border-radius:50%;
+    background:var(--accent);
+    margin-top:0.55rem;
+    flex:none;
+  }
+  .mono-inline{
+    font-family:"IBM Plex Mono", monospace;
+    background:var(--moon);
+    padding:0.1rem 0.4rem;
+    border-radius:5px;
+    font-size:0.88em;
+  }
+  .medical-card{
+    border-color:var(--accent);
+    background:#e6dccb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .medical-card{ background:#3a3226; }
+  }
+  :root[data-theme="dark"] .medical-card{ background:#3a3226; }
+  .medical-card h3{
+    font-family:"Libre Franklin", sans-serif;
+    font-weight:800;
+    font-size:1rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+    margin-bottom:0.6rem;
+  }
+  .medical-card p{ margin:0.4rem 0 0; font-size:1.02rem; }
+  .medical-card p strong{ color:var(--ink); }
+
+  /* ---------- Help steps ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:1.1rem;
+  }
+  @media (max-width:820px){ .steps{ grid-template-columns:1fr; } }
+  .step{
+    display:flex;
+    gap:1rem;
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:1.25rem 1.4rem;
+  }
+  .step-num{
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:1.6rem;
+    font-weight:600;
+    color:var(--accent);
+    flex:none;
+    width:2ch;
+  }
+  .step h3{
+    font-family:"Libre Franklin", sans-serif;
+    font-size:1.02rem;
+    font-weight:700;
+    margin-bottom:0.3rem;
+  }
+  .step p{ margin:0; color:var(--ink-soft); font-size:0.95rem; }
+
+  /* ---------- Map ---------- */
+  .map-frame{
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--paper-raised);
+  }
+  .map-frame iframe{
+    width:100%;
+    height:min(70vh, 560px);
+    border:0;
+    display:block;
+  }
+  .map-legend{
+    margin-top:0.9rem;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:0.9rem;
+  }
+  @media (max-width:820px){ .gallery{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width:520px){ .gallery{ grid-template-columns:1fr; } }
+  .gallery figure{
+    margin:0;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--paper-raised);
+  }
+  .gallery img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+  }
+  .gallery figcaption{
+    padding:0.7rem 0.9rem 0.9rem;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- Search party ---------- */
+  .party{
+    border-radius:18px;
+    background:var(--band-bg);
+    color:var(--band-ink);
+    padding:clamp(1.8rem, 4vw, 2.6rem);
+    display:grid;
+    grid-template-columns:1.4fr auto;
+    gap:1.5rem;
+    align-items:center;
+  }
+  @media (max-width:720px){ .party{ grid-template-columns:1fr; } }
+  .party .eyebrow{ color:var(--band-accent); }
+  .party h2{ color:var(--band-ink); font-size:1.6rem; }
+  .party p{ color:var(--band-ink-soft); margin:0.6rem 0 0; max-width:56ch; }
+  .party .btn-primary{ white-space:nowrap; }
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:clamp(2rem, 5vw, 3rem);
+    background:var(--band-bg);
+    color:var(--band-ink);
+  }
+  .footer-inner{
+    max-width:1120px;
+    margin:0 auto;
+    padding:clamp(2.5rem, 6vw, 3.5rem) clamp(1.25rem, 4vw, 2.5rem) 2.5rem;
+    text-align:center;
+  }
+  .footer-inner .eyebrow{ color:var(--band-accent); }
+  .footer-phone{
+    font-family:"IBM Plex Mono", monospace;
+    font-size:clamp(2.2rem, 6vw, 3.4rem);
+    font-weight:600;
+    margin:0.6rem 0;
+    color:var(--band-ink);
+    text-decoration:none;
+    display:inline-block;
+  }
+  .footer-phone:hover{ color:var(--band-accent-strong); }
+  .footer-meta{
+    color:var(--band-ink-soft);
+    font-size:0.95rem;
+    margin:0.2rem 0 1.6rem;
+  }
+  .footer-contacts{
+    display:flex;
+    justify-content:center;
+    gap:1.6rem;
+    flex-wrap:wrap;
+    font-size:0.92rem;
+    color:var(--band-ink-soft);
+    border-top:1px solid var(--band-line);
+    padding-top:1.4rem;
+  }
+  .footer-note{
+    margin-top:1.6rem;
+    font-size:0.85rem;
+    color:var(--band-ink-soft);
+    max-width:60ch;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .footer-chip{
+    font-family:"IBM Plex Mono", monospace;
+    background:var(--band-line);
+    color:var(--band-ink);
+    padding:0.1rem 0.4rem;
+    border-radius:5px;
+    font-size:0.88em;
+  }
+</style>
+</head>
+<body>
+
+  <div class="alertbar">
+    <div class="alertbar-inner">
+      <span class="alertbar-msg"><span class="pulse-dot" aria-hidden="true"></span> Earl Grey is still missing — Kingman, AZ, near Cheyenne Ave &amp; Maya Dr</span>
+      <a class="callnow" href="tel:15102162233">Call/Text 510.216.2233</a>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <header class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Kingman, Arizona &middot; Missing since August 8, 2026</span>
+          <h1>Earl Grey<br>is still <em>missing.</em></h1>
+          <p class="lede">He's a large grey long-haired Maine Coon mix with a blue-and-black checkered collar and a soft spot for spoon taps on a bowl. He's been gone <span id="days-missing">several</span> — please keep an eye out, and check yards, sheds, garages, and quiet hiding places near Cheyenne Ave &amp; Maya Dr.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="tel:15102162233">Call or text 510.216.2233</a>
+            <a class="btn btn-outline" id="download-poster" href="assets/poster/earl-grey-missing-poster.png" download="Earl-Grey-Missing-Poster.png">Download poster</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="assets/img/earl-05-with-anthony.jpg" alt="Earl Grey riding in the car, wearing a red harness with a tag that reads Earl Grey, sitting next to his owner Anthony">
+          <div class="hero-tag">Earl Grey &times; Anthony<strong>Last seen Aug 8, 2026</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="facts">
+      <div class="facts-grid">
+        <div>
+          <div class="fact-label">Breed</div>
+          <div class="fact-value">Maine Coon mix</div>
+        </div>
+        <div>
+          <div class="fact-label">Color</div>
+          <div class="fact-value">Grey, long-haired</div>
+        </div>
+        <div>
+          <div class="fact-label">Name</div>
+          <div class="fact-value">Earl Grey</div>
+        </div>
+        <div>
+          <div class="fact-label">Age</div>
+          <div class="fact-value">7.5 years</div>
+        </div>
+        <div>
+          <div class="fact-label">Last seen</div>
+          <div class="fact-value accent">Aug 8, 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <section id="recognize">
+      <div class="section-head">
+        <span class="eyebrow">Identification</span>
+        <h2>How to recognize him</h2>
+        <p>Many neighbors already know Earl by sight — but if you're new to the search, here's what sets him apart from other grey cats in the area.</p>
+      </div>
+      <div class="id-grid">
+        <div class="card">
+          <ul class="id-list">
+            <li>Blue-and-black checkered collar with a bell; <strong>no name tag</strong></li>
+            <li>A small notch missing from his right ear</li>
+            <li>Long tail; loves rolling on the ground</li>
+            <li>Responds to &ldquo;Earl,&rdquo; to spoon taps on a bowl, and can sit</li>
+            <li>Microchipped with an active missing-pet alert &mdash; chip <span class="mono-inline">#985141001755680</span></li>
+            <li>HomeAgain Pet Recovery: <a href="tel:18884663242">1-888-466-3242</a></li>
+          </ul>
+        </div>
+        <div class="card medical-card">
+          <h3>Urgent medical &mdash; please read</h3>
+          <p><strong>He has bladder and dehydration issues.</strong></p>
+          <p>If he's found, please offer <strong>wet food mixed with water only</strong>, and get him to us or a vet as soon as possible.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="help">
+      <div class="section-head">
+        <span class="eyebrow">What to do</span>
+        <h2>How you can help</h2>
+        <p>A frightened missing cat can run, hide, or travel much farther than you'd expect &mdash; how you approach the moment you spot him matters.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">1</span>
+          <div>
+            <h3>Watch for an unfamiliar grey cat</h3>
+            <p>Silver, grey Maine Coon or tabby-looking, or long-haired &mdash; near your home, neighborhood, business, or property.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <div>
+            <h3>Notice anything unusual</h3>
+            <p>A stray collar, fur, signs an animal was trapped or injured, or evidence a cat entered a garage, shed, vehicle, or enclosed space.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <div>
+            <h3>Don't chase him</h3>
+            <p>If you think it's Earl Grey, don't approach quickly. Keep your distance so he doesn't bolt farther away.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">4</span>
+          <div>
+            <h3>Document safely, then call</h3>
+            <p>From a safe distance, get a photo or video, note the exact address or cross streets, the time, and which direction he went &mdash; then contact us right away.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">5</span>
+          <div>
+            <h3>Share this page</h3>
+            <p>Or make your own post, so it reaches neighbors who haven't seen Earl's information yet.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">6</span>
+          <div>
+            <h3>Check the search map below</h3>
+            <p>See where he was last seen and which areas are already covered, so new searching goes where it's needed most.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="map">
+      <div class="section-head">
+        <span class="eyebrow">Search area</span>
+        <h2>Where he went missing &amp; where we've searched</h2>
+        <p>This map shows the area near Cheyenne Ave &amp; Maya Dr where Earl Grey was last seen, along with the areas covered so far.</p>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1CsrtUjKuXHc_KTSG-wZMK7debIyz8E8&amp;ehbc=2E312F" loading="lazy" title="Map of Earl Grey's last-seen location and areas searched in Kingman, AZ" allowfullscreen></iframe>
+      </div>
+      <p class="map-legend">If you search a new area, please let us know so we can keep this map up to date for everyone helping.</p>
+    </section>
+
+    <section id="gallery">
+      <div class="section-head">
+        <span class="eyebrow">Photos</span>
+        <h2>Earl Grey</h2>
+      </div>
+      <div class="gallery">
+        <figure>
+          <img src="assets/img/earl-01.jpg" alt="Earl Grey, a grey long-haired Maine Coon, looking up with green-gold eyes">
+          <figcaption>Earl's signature look &mdash; ears up, watching everything.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/earl-02.jpg" alt="Close-up of Earl Grey's face, whiskers and long grey fur">
+          <figcaption>His fur reads more silver-grey in bright light.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/earl-03.jpg" alt="Earl Grey peeking out from under a white blanket">
+          <figcaption>A blanket burrower at heart.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/earl-04.jpg" alt="Earl Grey resting his chin on a green fabric toy">
+          <figcaption>Never far from his favorite green toy.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/img/earl-05-with-anthony.jpg" alt="Earl Grey in the car with his owner Anthony, wearing a red harness">
+          <figcaption>Earl and Anthony, on one of their car rides.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="search-party">
+      <div class="party">
+        <div>
+          <span class="eyebrow">Search together</span>
+          <h2>Join Earl Grey's search party</h2>
+          <p>Other pet parents in Kingman and Mohave County are searching for their animals too. If your pet is missing near where Earl went missing, we're always happy to help organize a search group.</p>
+        </div>
+        <a class="btn btn-primary" href="https://petcolove.org/lost/search-team/join/NGU2Y2E1MWItNTk1Yy00M2E0LWJmYmUtYWUxN2Q0YzY3MjRkOjEyMzk3NDkyOQ==/?utm_source=user-invite-native-share&amp;utm_medium=native-share&amp;utm_campaign=pll-search-party-host-invite-lost-pet-123974929" target="_blank" rel="noopener">Join on Petco Love Lost</a>
+      </div>
+    </section>
+
+  </div>
+
+  <footer id="contact">
+    <div class="footer-inner">
+      <span class="eyebrow">If you see him &mdash; or have taken him in &mdash; please contact</span>
+      <a class="footer-phone" href="tel:15102162233">510.216.2233</a>
+      <p class="footer-meta">Anthony &middot; Kingman, Arizona</p>
+      <div class="footer-contacts">
+        <span>Email: <a href="mailto:acinktown@gmail.com">acinktown@gmail.com</a></span>
+        <span>Nextdoor: please send a direct message</span>
+        <span>Chip <span class="footer-chip">#985141001755680</span></span>
+      </div>
+      <p class="footer-note">Please check yards, sheds, garages, under porches, and quiet hiding places &mdash; he may be too frightened to come out during the day. Thank you for keeping Earl Grey in mind, and for helping every missing pet in our community.</p>
+    </div>
+  </footer>
+
+<script>
+  (function(){
+    var lastSeen = new Date(2026, 7, 8); // August 8, 2026
+    var now = new Date();
+    var msPerDay = 24 * 60 * 60 * 1000;
+    var days = Math.max(0, Math.round((now - lastSeen) / msPerDay));
+    var el = document.getElementById('days-missing');
+    if (el && days > 0) {
+      el.textContent = days + (days === 1 ? ' day' : ' days');
+    }
+  })();
+</script>
+
+</body>
+</html>
