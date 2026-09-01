@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Earl Grey Is Missing — Kingman, AZ</title>
-<meta name="description" content="Earl Grey, a grey long-haired Maine Coon mix, has been missing from Kingman, Arizona since August 8, 2026. See how to help, view the search map, and contact Anthony with sightings.">
+<meta name="description" content="Earl Grey, a grey long-haired Maine Coon mix, has been missing from Kingman, Arizona since August 9, 2026. See how to help, view the search map, and contact Anthony with sightings.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -388,11 +388,47 @@
     border:0;
     display:block;
   }
+  .days-counter{
+    margin:0.9rem 0 0;
+    font-size:1.05rem;
+    font-weight:600;
+    color:var(--accent-deep);
+  }
   .map-legend{
-    margin-top:0.9rem;
+    margin-top:0.4rem;
     font-size:0.9rem;
     color:var(--ink-soft);
   }
+  .search-zones{
+    margin-top:1.75rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--line);
+  }
+  .search-zones h3{
+    font-size:1.15rem;
+    font-weight:600;
+    margin:0;
+  }
+  .search-zones > p{
+    color:var(--ink-soft);
+    margin:0.5rem 0 0;
+    max-width:62ch;
+  }
+  .search-zones ul{
+    margin:1rem 0 0;
+    padding:0;
+    list-style:none;
+    display:grid;
+    gap:0.7rem;
+  }
+  .search-zones li{
+    padding:0.8rem 1rem;
+    border:1px solid var(--line);
+    border-radius:12px;
+    background:var(--paper-raised);
+    color:var(--ink-soft);
+  }
+  .search-zones li strong{ color:var(--ink); }
 
   /* ---------- Gallery ---------- */
   .gallery{
@@ -553,9 +589,9 @@
     <header class="hero">
       <div class="hero-grid">
         <div>
-          <span class="eyebrow">Kingman, Arizona &middot; Missing since August 8, 2026</span>
+          <span class="eyebrow">Kingman, Arizona &middot; Missing since August 9, 2026</span>
           <h1>Earl Grey<br>is still <em>missing.</em></h1>
-          <p class="lede">He's a large grey long-haired Maine Coon mix with a blue-and-black checkered collar and a soft spot for spoon taps on a bowl. He's been gone <span id="days-missing">several</span> — please keep an eye out, and check yards, sheds, garages, and quiet hiding places near Cheyenne Ave &amp; Maya Dr.</p>
+          <p class="lede">He's a large grey long-haired Maine Coon mix with a blue-and-black checkered collar and a soft spot for spoon taps on a bowl. Please keep an eye out, and check yards, sheds, garages, and quiet hiding places near Cheyenne Ave &amp; Maya Dr.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="tel:15102162233">Call or text 510.216.2233</a>
             <a class="btn btn-outline" id="download-poster" href="assets/poster/earl-grey-missing-poster.png" download="Earl-Grey-Missing-Poster.png">Download poster</a>
@@ -563,7 +599,7 @@
         </div>
         <div class="hero-photo">
           <img src="assets/img/earl-05-with-anthony.jpg" alt="Earl Grey riding in the car, wearing a red harness with a tag that reads Earl Grey, sitting next to his owner Anthony">
-          <div class="hero-tag">Earl Grey &times; Anthony<strong>Last seen Aug 8, 2026</strong></div>
+          <div class="hero-tag">Earl Grey &times; Anthony<strong>Last seen Aug 9, 2026</strong></div>
         </div>
       </div>
     </header>
@@ -588,7 +624,7 @@
         </div>
         <div>
           <div class="fact-label">Last seen</div>
-          <div class="fact-value accent">Aug 8, 2026</div>
+          <div class="fact-value accent">Aug 9, 2026</div>
         </div>
       </div>
     </div>
@@ -679,7 +715,21 @@
       <div class="map-frame">
         <iframe src="https://www.google.com/maps/d/embed?mid=1CsrtUjKuXHc_KTSG-wZMK7debIyz8E8&amp;ehbc=2E312F" loading="lazy" title="Map of Earl Grey's last-seen location and areas searched in Kingman, AZ" allowfullscreen></iframe>
       </div>
+      <p class="days-counter">Earl Grey has been missing for <span id="days-missing"></span>.</p>
       <p class="map-legend">If you search a new area, please let us know so we can keep this map up to date for everyone helping.</p>
+
+      <div class="search-zones">
+        <h3>Areas that need regular re-checking</h3>
+        <p>These spots come up again and again in sightings and tips. If you're nearby, please keep an eye on them and let us know if anything changes.</p>
+        <ul>
+          <li><strong>N Central St &amp; E Pawnee Drive</strong> &mdash; this crossroad sits just a couple blocks away and marks a direct entry point into the nearby neighborhood park.</li>
+          <li><strong>Pawnee Neighborhood Park</strong></li>
+          <li><strong>Four Corners Pipeline Area</strong></li>
+          <li><strong>Southern and eastern intersection</strong> &mdash; monsoon park (green hole), the commercial plaza, backyards, etc.</li>
+          <li><strong>The Mohawk Wash</strong> &mdash; just north of Cherokee</li>
+          <li><strong>Local drainage channels</strong></li>
+        </ul>
+      </div>
     </section>
 
     <section id="gallery">
@@ -755,12 +805,16 @@
 
 <script>
   (function(){
-    var lastSeen = new Date(2026, 7, 8); // August 8, 2026
+    var lastSeen = new Date(2026, 7, 9); // August 9, 2026
     var now = new Date();
     var msPerDay = 24 * 60 * 60 * 1000;
-    var days = Math.max(0, Math.round((now - lastSeen) / msPerDay));
+    // Compare calendar dates (not exact timestamps) so the count only
+    // changes once, right after local midnight, each day.
+    var lastSeenMidnight = new Date(lastSeen.getFullYear(), lastSeen.getMonth(), lastSeen.getDate());
+    var nowMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var days = Math.max(0, Math.round((nowMidnight - lastSeenMidnight) / msPerDay));
     var el = document.getElementById('days-missing');
-    if (el && days > 0) {
+    if (el) {
       el.textContent = days + (days === 1 ? ' day' : ' days');
     }
   })();
