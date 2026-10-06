@@ -271,6 +271,38 @@
     max-width:52ch;
     margin:0 0 1.75rem;
   }
+  .update-card{
+    background:var(--paper-raised);
+    border:1px solid var(--line);
+    border-left:4px solid var(--accent);
+    border-radius:14px;
+    padding:1.2rem 1.4rem;
+    margin:0 0 1.75rem;
+    max-width:60ch;
+  }
+  .update-card p{ margin:0.6rem 0 0; font-size:0.98rem; color:var(--ink-soft); }
+  .update-card p strong{ color:var(--ink); }
+  .update-card p.update-date{
+    margin:0;
+    font-family:"IBM Plex Mono", monospace;
+    font-size:0.75rem;
+    font-weight:600;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--accent-deep);
+  }
+  .update-card p.update-ask{
+    margin-top:0.35rem;
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--ink);
+    line-height:1.3;
+  }
+  .update-card p.update-note{
+    font-size:0.92rem;
+    padding-top:0.6rem;
+    border-top:1px solid var(--line);
+  }
   .cta-row{
     display:flex;
     flex-wrap:wrap;
@@ -553,6 +585,41 @@
     object-position:center;
   }
   .gallery img.obj-top{ object-position:center top; }
+  .gallery img.obj-contain{ object-fit:contain; background:#fff; }
+  .collar-block{
+    margin-top:2rem;
+    padding-top:1.5rem;
+    border-top:1px solid var(--line);
+  }
+  .collar-block h3{ font-size:1.15rem; font-weight:600; }
+  .collar-block > p{ color:var(--ink-soft); margin:0.5rem 0 1rem; max-width:62ch; }
+  .gallery-collar{ grid-template-columns:repeat(2, 1fr); }
+  @media (max-width:520px){ .gallery-collar{ grid-template-columns:1fr; } }
+  .videos{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 320px));
+    gap:0.9rem;
+  }
+  @media (max-width:520px){ .videos{ grid-template-columns:1fr; } }
+  .videos figure{
+    margin:0;
+    border-radius:14px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    background:var(--paper-raised);
+  }
+  .videos video{
+    width:100%;
+    aspect-ratio:9 / 14;
+    object-fit:cover;
+    display:block;
+    background:#000;
+  }
+  .videos figcaption{
+    padding:0.7rem 0.9rem 0.9rem;
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
   .gallery figcaption{
     padding:0.7rem 0.9rem 0.9rem;
     font-size:0.85rem;
@@ -698,8 +765,16 @@
         <div>
           <span class="eyebrow">Kingman, Arizona &middot; Missing since August 9, 2026</span>
           <h1>Earl Grey<br>is still <em>missing.</em></h1>
-          <p><class="lede">He's a large grey long-haired Maine Coon mix with a blue-and-black checkered collar and a soft spot for spoon taps on a bowl. Please keep an eye out, and check yards, sheds, garages, and quiet hiding places near Cheyenne Ave &amp; Maya Dr.</p>
-          <p><class="lede"><strong>Update — September 8, 2026</strong><br>Earl Grey is still missing. As of today, he has been gone for 30 days. This week, I am preparing for a concentrated search effort in the Hualapai Foothills neighborhood, with attention to the areas around Seneca, Cheyenne, Maya, and Packsaddle. If you would like to help, please consider checking any accessible place where a cat could have become hidden or trapped—such as a garage, shed, storage area, enclosed yard, or under/behind outdoor structures and let me know directl. Even if you find nothing, this helps give me a better idea of where he may be. If you have security cameras, footage from the day he went missing between <strong>11:00 PM on Saturday, August 8 through 11:00 PM on Sunday, August 9</strong>or the next couple of days after, this would also be helpful. I am moving soon, but my family will remain local and the search will not simply end. If you see or hear anything that may be relevant, please call, text, or email me directly using the contact information on this page. Thank you for keeping Earl in mind.</p>
+          <p class="lede">He's a large silver-grey long-haired Maine Coon mix, about 15&nbsp;lb, last seen near Cheyenne Ave &amp; Maya Dr in the Hualapai Mountain foothills. He may still be wearing his blue-and-black checkered collar with a light-blue cat-shaped buckle and a bell.</p>
+          <div class="update-card">
+            <p class="update-date">Update &mdash; October 6, 2026</p>
+            <p class="update-ask">Neighbors: could you spare 10 minutes to check your own property?</p>
+            <p>I've searched the backcountry and washes from Desert Canyon Way to Eastern St. and driven the area night after night. I haven't found any confirmed sign of Earl or evidence of a struggle. That means he's most likely somewhere I can't look myself &mdash; inside a fenced yard, garage, shed, or other private space &mdash; or he's alive and someone has taken him in.</p>
+            <p>Please take a quick look under sheds, decks, porches, trailers, RVs, and vehicles, and inside garages, barns, storage areas, brush piles, and enclosed yards. Watch for long grey fur or his collar, too.</p>
+            <p>I know the desert is unpredictable and that Earl may not have survived. Either way, I'm hoping for a reunion or for information that brings closure and gives him a final resting place. <strong>Please reach out with any sighting, photo, collar, remains, or lead &mdash; even if you're not sure.</strong></p>
+            <p class="update-note"><strong>Possible lead:</strong> an unconfirmed report and photo of a similar grey long-haired cat near <strong>Bank St &amp; Melody</strong> is being checked. It has not been confirmed as Earl, so please keep an eye out there too.</p>
+            <p class="update-note">Kingman animal control has told me they don't respond to or keep logs for cats, alive or deceased &mdash; so neighbors keeping watch really is Earl's best hope. I'm moving soon, but my family is staying local and the search continues. Thank you for everything you've done so far.</p>
+          </div>
           <div class="cta-row">
             <a class="btn btn-primary" href="tel:15102162233">Call or text 510.216.2233</a>
             <a class="btn btn-outline" id="download-poster" href="assets/poster/earl-grey-missing-poster.png" download="Earl-Grey-Missing-Poster.png">Download poster</a>
@@ -746,9 +821,11 @@
       <div class="id-grid">
         <div class="card">
           <ul class="id-list">
-            <li>Blue-and-black checkered collar with a bell; <strong>no name tag</strong></li>
+            <li>About 15&nbsp;lb, with long solid silver-grey / blue-grey fur and a thick ruff around his neck</li>
+            <li>Tall ears, pale yellow-green eyes, and a dark charcoal-grey nose</li>
+            <li>Blue-and-black checkered collar with a light-blue cat-shaped buckle and a bell; <strong>no name tag</strong></li>
             <li>A small notch missing from his right ear</li>
-            <li>Long tail; loves rolling on the ground</li>
+            <li>Thick, bushy tail; loves rolling on the ground</li>
             <li>Responds to &ldquo;Earl,&rdquo; to spoon taps on a bowl, and can sit</li>
             <li>Microchipped with an active missing-pet alert &mdash; chip <span class="mono-inline">#XXXXXXXXXXXX5680</span></li>
             <li>HomeAgain Pet Recovery: <a href="tel:18884663242">1-888-466-3242</a></li>
@@ -876,6 +953,76 @@
           </button>
           <figcaption>Earl and Anthony, on one of their car rides.</figcaption>
         </figure>
+        <figure>
+          <button class="gallery-trigger" type="button" aria-label="View larger: Earl held by Anthony">
+            <img class="obj-top" src="assets/img/earl-10-with-anthony.jpg" alt="Close-up of Earl Grey's face with pale yellow-green eyes and a dark nose, held by Anthony">
+          </button>
+          <figcaption>Pale yellow-green eyes, dark charcoal nose, tall ears.</figcaption>
+        </figure>
+        <figure>
+          <button class="gallery-trigger" type="button" aria-label="View larger: Earl in an orange chair">
+            <img class="obj-top" src="assets/img/earl-09-orange-chair.jpg" alt="Earl Grey lounging in sunlight on an orange chair, showing his thick neck fur">
+          </button>
+          <figcaption>The thick ruff of fur around his neck.</figcaption>
+        </figure>
+        <figure>
+          <button class="gallery-trigger" type="button" aria-label="View larger: Earl's full length and tail">
+            <img src="assets/img/earl-08-full-length-tail.jpg" alt="Earl Grey stretched out on a mattress, showing his full size and thick bushy tail">
+          </button>
+          <figcaption>His full size and thick, bushy tail.</figcaption>
+        </figure>
+        <figure>
+          <button class="gallery-trigger" type="button" aria-label="View larger: Earl napping on a rug">
+            <img src="assets/img/earl-07-rug-nap.jpg" alt="Earl Grey sleeping on his back on a striped grey rug">
+          </button>
+          <figcaption>Fully relaxed on his favorite rug.</figcaption>
+        </figure>
+        <figure>
+          <button class="gallery-trigger" type="button" aria-label="View larger: Earl stretched out by the window">
+            <img src="assets/img/earl-06-window-stretch.jpg" alt="Earl Grey stretched out on a green blanket by a sunny window, next to a potted plant">
+          </button>
+          <figcaption>Stretched out in the window light.</figcaption>
+        </figure>
+        <figure>
+          <button class="gallery-trigger" type="button" aria-label="View larger: Earl in the evening">
+            <img src="assets/img/earl-11-evening.jpg" alt="Earl Grey lying on a blue blanket in a dim room with plants and a lamp">
+          </button>
+          <figcaption>How he can look in low light &mdash; much darker grey.</figcaption>
+        </figure>
+      </div>
+
+      <div class="collar-block">
+        <h3>His collar</h3>
+        <p>He may still be wearing this collar &mdash; or it may have come off. If you find one like it anywhere, please let us know.</p>
+        <div class="gallery gallery-collar">
+          <figure>
+            <button class="gallery-trigger" type="button" aria-label="View larger: collar buckle close-up">
+              <img class="obj-contain" src="assets/img/collar-buckle-closeup.jpg" alt="Close-up of a blue-and-black checkered cat collar with a light-blue cat-head-shaped buckle and a silver bell">
+            </button>
+            <figcaption>Light-blue cat-shaped buckle and small silver bell.</figcaption>
+          </figure>
+          <figure>
+            <button class="gallery-trigger" type="button" aria-label="View larger: full collar">
+              <img class="obj-contain" src="assets/img/collar-full.jpg" alt="Full length of a blue-and-black checkered cat collar with a light-blue buckle and bell">
+            </button>
+            <figcaption>Blue-and-black checkered pattern.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="collar-block">
+        <h3>Earl on video</h3>
+        <p>How he moves and carries himself.</p>
+        <div class="videos">
+          <figure>
+            <video src="assets/video/earl-garden-walk.mp4" poster="assets/video/earl-garden-walk-poster.jpg" controls muted loop playsinline preload="none" aria-label="Video of Earl Grey walking through a garden"></video>
+            <figcaption>Exploring the garden.</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/video/earl-purr-box.mp4" poster="assets/video/earl-purr-box-poster.jpg" controls muted loop playsinline preload="none" aria-label="Video of Earl Grey peeking out through a slot in a red door"></video>
+            <figcaption>Peeking through the &ldquo;purrrr box.&rdquo;</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
